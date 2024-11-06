@@ -8,19 +8,35 @@
 */
 * {
   font-family: "Poiret One", sans-serif;
-  text-decoration-color: bisque;
+  text-decoration-color: #E3DDC9;
   text-decoration-thickness: 0.3rem;
-  color: rgb(243, 241, 240);
+  color: #E3DDC9;
   cursor: none;
+  text-underline-offset: 0.3rem;
 }
 
 body {
-  background-color: #1f2022;
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at center,
+    #2E2B24 0%,
+    #2E2B24 60%,
+    #2E2B24 75%,
+    rgba(255, 245, 230, 0.1) 140%
+  );
   height: 100%;
   margin: 0;
   padding: 0;
+  justify-content: center;
   text-align: center;
-  display: flexbox; /* Hides the default cursor */
+  display: flexbox;
+  /* Hides the default cursor */
+}
+
+.home-svg {
+  margin-left: 10px;
+  justify-content: center;
 }
 
 h1 {
@@ -36,12 +52,36 @@ p {
 }
 
 .navbar {
-  font-size: 20px;
+  margin: auto;
+  font-size: 22px;
   font-weight: bold;
   text-align: center;
   justify-content: center;
   list-style-type: none;
-  display: inline-flex;
+  display: block;
+}
+
+.nav-ul li a {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  transition: all 0.2s ease;
+  transform-origin: center;
+}
+
+.nav-ul li a:hover {
+  transform: scale(1.1);
+  font-weight: 600;
+}
+
+/* This prevents layout shift when font-weight changes */
+.nav-ul li a::before {
+  display: block;
+  content: attr(href);
+  font-weight: 600;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 ul li {
@@ -52,13 +92,110 @@ li {
 }
 
 .circle {
-  height: 20px;
-  width: 20px;
-  border-radius: 20px;
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
   background-color: black;
   position: fixed;
   top: 0;
   left: 0;
   pointer-events: none;
   z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/*Discord Bots Display*/
+
+.discord-projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .discord-projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bot-card {
+  flex: 0 1 calc(33.333% - 2rem);
+  min-width: 300px;
+}
+
+.bot-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.bot-card:hover {
+  transform: translateY(-5px);
+}
+
+.bot-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.bot-details {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.bot-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+}
+
+.bot-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  height: 40px; /* Fixed height for container */
+}
+
+.bot-invite,
+.source-code {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 120px;
+  text-align: center;
+  line-height: 1.5;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.bot-invite {
+  background: #5865f2;
+  color: white;
+}
+
+.bot-invite:hover {
+  transform: translateY(-2px);
+  background: #4752c4;
+}
+
+.source-code {
+  background: #2f3136;
+  color: white;
+}
+
+.source-code:hover {
+  transform: translateY(-2px);
+  background: #23252a;
+}
+
+.green-text {
+  color: rgb(57, 204, 204);
 }

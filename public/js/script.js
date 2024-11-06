@@ -1,9 +1,7 @@
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
 
-const colors = [
-"bisque",
-];
+const colors = ["bisque"];
 
 circles.forEach(function (circle, index) {
   circle.x = 0;
@@ -38,3 +36,25 @@ function animateCircles() {
 }
 
 animateCircles();
+
+document.addEventListener("mousemove", (e) => {
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+  const distanceFromCenter = Math.sqrt(
+    Math.pow(e.clientX - centerX, 2) + Math.pow(e.clientY - centerY, 2)
+  );
+
+  const circles = document.querySelectorAll(".circle");
+  // Increased to 0.75 to push the color change threshold closer to the edges
+  const radius = Math.min(window.innerWidth, window.innerHeight) * 0.82;
+
+  circles.forEach((circle) => {
+    if (distanceFromCenter > radius) {
+      circle.style.backgroundColor = "#322d1a";
+      circle.style.transition = "background-color 0.3s ease";
+    } else {
+      circle.style.backgroundColor = "#edebde";
+      circle.style.transition = "background-color 0.3s ease";
+    }
+  });
+});
