@@ -6,6 +6,11 @@
     rgb(46, 45, 44, 50%)
   }
 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   font-family: "Poiret One", sans-serif;
   text-decoration-color: #f1f0e9;
