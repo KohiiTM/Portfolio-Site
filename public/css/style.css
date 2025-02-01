@@ -99,7 +99,13 @@ nav li {
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 99999999; 
+  z-index: 99999999;
+}
+
+/*hide custom cursor for mobile users*/
+
+.hide-circle {
+  display: none;
 }
 
 
@@ -204,12 +210,15 @@ nav li {
 .bot-features li {
   font-size: 18px;
   font-weight: 525;
-
 }
 
 /* Footer styles */
 .footer {
-  background: linear-gradient(to right, #FF7E5F, #feb47b); /* Gradient from left to right */
+  background: linear-gradient(
+    to right,
+    #ff7e5f,
+    #feb47b
+  ); /* Gradient from left to right */
   color: white; /* Text color */
   text-align: center;
   padding: 20px;
@@ -222,7 +231,3 @@ nav li {
   margin: 0;
   font-size: 16px;
 }
-
-
-
-
