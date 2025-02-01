@@ -14,7 +14,7 @@
 * {
   font-family: "Poiret One", sans-serif;
   text-decoration-color: #f1f0e9;
-  text-decoration-thickness: 0.3rem;
+
   color: #f1f0e9;
   cursor: none;
   text-underline-offset: 0.3rem;
@@ -23,44 +23,101 @@
 body {
   position: relative;
   min-height: 100vh;
-  background-color: #1b1b1b;
+  background-color: #2b2822;
   height: 100%;
   margin: 0;
   padding: 0;
   justify-content: center;
   text-align: center;
   display: flexbox;
-  /* Hides the default cursor */
+
+  border: 2px solid #f1f0e9;
+  border-radius: 20px;
 }
 
 .home-svg {
-  margin-left: 10px;
   justify-content: center;
 }
 
 h1 {
-  font-size: 22;
+  font-size: 30px;
   font-weight: 700;
   display: inline-flex;
   justify-content: center;
 }
 
-p {
-  font-size: 18px;
+h2 {
+  font-size: 25px;
   font-weight: 600;
+  display: inline-flex;
+  justify-content: center;
+}
+
+p {
+  font-size: 22px;
+  font-weight: 400;
 }
 
 .navbar {
   margin: auto;
   font-size: 22px;
-  font-weight: bold;
   text-align: center;
   justify-content: center;
   list-style-type: none;
   display: block;
+  padding: 10px;
 }
 
-.nav-ul li a {
+.nav-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-ul li {
+  margin-right: 12px;
+  transition: transform 0.2s ease;
+}
+
+.nav-ul li:hover {
+  transform: scale(1.1);
+  font-weight: 600;
+}
+
+.nav-ul li:last-child {
+  margin-right: 0;
+}
+
+.nav-color {
+  background-color: #f1f0e9;
+}
+
+/* About Page */
+.university-container {
+  align-items: center; /* vertically centers the items */
+  font-size: 22px;
+}
+.university-logo {
+  width: 30px;
+  height: auto;
+  vertical-align: middle; /* or try 'baseline' and adjust with margin */
+  margin-right: 10px;
+  position: relative;
+  top: 0px; /* fine-tune the vertical shift */
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  font-size: 22px;
+}
+
+.bot-features li a {
   position: relative;
   display: inline-block;
   padding: 5px;
@@ -68,25 +125,15 @@ p {
   transform-origin: center;
 }
 
-.nav-ul li a:hover {
+.bot-features li a:hover {
   transform: scale(1.1);
   font-weight: 600;
 }
 
-/* This prevents layout shift when font-weight changes */
-.nav-ul li a::before {
-  display: block;
-  content: attr(href);
-  font-weight: 600;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-
-nav ul li {
+.bot-features ul li {
   margin-right: 12px;
 }
-nav li {
+.bot-features li {
   display: inline;
 }
 
@@ -107,8 +154,6 @@ nav li {
 .hide-circle {
   display: none;
 }
-
-
 
 /*Discord Bots Display*/
 
@@ -186,6 +231,7 @@ nav li {
 .bot-invite {
   background: #5865f2;
   color: white;
+  white-space: nowrap;
 }
 
 .bot-invite:hover {
