@@ -13,26 +13,116 @@
 
 * {
   font-family: "Poiret One", sans-serif;
-  text-decoration-color: #f1f0e9;
-  color: #f1f0e9;
   text-underline-offset: 0.3rem;
 }
+
+html {
+  scrollbar-color: #f1f0e9 #2b2822;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scroll-padding-top: 25px;
+}
+
+
 
 
 
 body {
   position: relative;
   min-height: 100vh;
-  background-color: #2b2822;
+  color: #2b2822;
+  background-color: #c7c7c7;
   height: 100%;
   margin: 0;
   padding: 0;
   justify-content: center;
   text-align: center;
   display: flexbox;
-
+  transition: background 0.3s ease, color 0.3s ease;
   border: 2px solid #f1f0e9;
   border-radius: 20px;
+}
+
+
+/* Container */
+.mode-toggle-container {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  gap: 15px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+/* Switch Styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333333;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* When Checked - Move the Toggle */
+input:checked + .slider {
+  background-color: #d1d1d1;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode a {
+  color: #f1f0e9;
+}
+
+
+body.dark-mode {
+  background: #2b2822;
+  color: #f1f0e9;
+}
+
+body.dark-mode h1 span:first-child {
+  color: #f1f0e9;
+}
+
+body.dark-mode h1 span:last-child {
+  color: #ccc;
+}
+
+a:visited {
+  color: #2b2822;
 }
 
 .home {
@@ -59,7 +149,6 @@ p {
   font-size: 22px;
   font-weight: 400;
 }
-
 
 /* navbar */
 .navbar {
@@ -101,17 +190,17 @@ p {
 
 /* About Page */
 .university-container {
-  align-items: center; /* vertically centers the items */
+  align-items: center;
   font-size: 22px;
   font-weight: 700;
 }
 .university-logo {
   width: 30px;
   height: auto;
-  vertical-align: middle; /* or try 'baseline' and adjust with margin */
+  vertical-align: middle;
   margin-right: 10px;
   position: relative;
-  top: 0px; /* fine-tune the vertical shift */
+  top: 0px;
 }
 
 .skills-list {
@@ -143,8 +232,6 @@ p {
 .bot-features li {
   display: inline;
 }
-
-
 
 /*Discord Bots Display*/
 
@@ -208,7 +295,6 @@ p {
   height: 40px; /* Fixed height for container */
 }
 
-
 .bot-invite,
 .source-code {
   padding: 0.5rem 1rem;
@@ -252,12 +338,8 @@ p {
 
 /* Footer styles */
 .footer {
-  background: linear-gradient(
-    to right,
-    #83a1b9,
-    #545897
-  ); /* Gradient from left to right */
-  color: white; /* Text color */
+  background: linear-gradient(to right, #83a1b9, #545897);
+  color: white;
   text-align: center;
   padding: 20px;
   width: 10%;
@@ -269,7 +351,7 @@ p {
 }
 
 .footer:hover {
-  transform:translateY(-2px);
+  transform: translateY(-2px);
   transition: ease 0.2s;
 }
 .footer p {
@@ -287,6 +369,6 @@ p {
   text-decoration: underline;
 }
 
-[class= "fa fa-envelope"] {
+[class="fa fa-envelope"] {
   text-decoration: none;
 }
