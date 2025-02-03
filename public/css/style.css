@@ -43,6 +43,21 @@ body {
   border-radius: 20px;
 }
 
+a:link,
+a:visited {
+  color: inherit;        /* Inherits the text color from the parent */
+  text-decoration: none; /* Removes underlines if needed */
+}
+
+/* Optional Hover Effect */
+a:hover {
+  text-decoration: underline; /* Add hover effect if desired */
+  color: inherit;             /* Prevent color change on hover */
+}
+
+a:active {
+  color: inherit; /* Ensures no color change when clicking */
+}
 
 /* Container */
 .mode-toggle-container {
