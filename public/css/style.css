@@ -23,10 +23,6 @@ html {
   scroll-padding-top: 25px;
 }
 
-
-
-
-
 body {
   position: relative;
   min-height: 100vh;
@@ -45,14 +41,14 @@ body {
 
 a:link,
 a:visited {
-  color: inherit;        /* Inherits the text color from the parent */
+  color: inherit; /* Inherits the text color from the parent */
   text-decoration: none; /* Removes underlines if needed */
 }
 
 /* Optional Hover Effect */
 a:hover {
   text-decoration: underline; /* Add hover effect if desired */
-  color: inherit;             /* Prevent color change on hover */
+  color: inherit; /* Prevent color change on hover */
 }
 
 a:active {
@@ -116,12 +112,10 @@ input:checked + .slider:before {
   transform: translateX(30px);
 }
 
-
 /* Dark Mode Styles */
 body.dark-mode a {
   color: #f1f0e9;
 }
-
 
 body.dark-mode {
   background: #2b2822;
@@ -386,4 +380,75 @@ p {
 
 [class="fa fa-envelope"] {
   text-decoration: none;
+}
+
+/* folders*/
+body {
+  margin: 0;
+}
+
+.sidebar {
+  position: fixed;
+  left: 3px;
+  top: 3px;
+  width: 80px;
+  height: 100vh;
+  background: #222;
+  color: white;
+  padding-top: 20px;
+  transition: 0.3s ease;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: width 0.2s ease-in-out;
+
+  /* Center folders */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar:hover {
+  width: 200px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: large;
+}
+
+.folder {
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.folder:hover .folder-content {
+  display: block;
+}
+
+.folder-name {
+  display: block;
+  font-weight: bold;
+}
+
+.folder-content {
+  display: none;
+  background: #333;
+  padding-left: 10px;
+  margin-top: 5px;
+  border-left: 2px solid #666;
+  text-decoration: none;
+}
+
+.folder-content li {
+  padding: 5px;
+  font-size: 18px;
+}
+
+.folder-content li:hover {
+  background: #444;
 }
