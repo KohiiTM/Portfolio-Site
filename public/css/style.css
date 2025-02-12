@@ -221,8 +221,6 @@ p {
   top: 0px;
 }
 
-
-
 .bot-features li a {
   position: relative;
   display: inline-block;
@@ -267,11 +265,12 @@ p {
 
 /* Hide sidebar on screens smaller than 768px */
 @media screen and (max-width: 768px) {
-  .sidebar {
-      display: none;
+  .sidebar,
+  .folder,
+  .folder-content {
+    display: none;
   }
 }
-
 
 .bot-card {
   flex: 0 1 calc(33.333% - 2rem);
@@ -490,8 +489,6 @@ body {
   height: auto;
 }
 
-
-
 .skills-list {
   display: flex;
   justify-content: center;
@@ -542,5 +539,3 @@ body {
 .skills-list li:nth-child(even) {
   animation-delay: 1s;
 }
-
-
