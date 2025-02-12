@@ -387,19 +387,26 @@ body {
   margin: 0;
 }
 
+
 .sidebar {
-  position: fixed;
+  float: left; /* Keep it from interfering with other elements */
+}
+
+.sidebar {
+  position: sticky;
   left: 3px;
-  top: 3px;
+  top: 40%;
   width: 80px;
-  height: 100vh;
+  height: 40vh;
   background: #222;
+  opacity: 0.65;
   color: white;
   padding-top: 20px;
   transition: 0.3s ease;
   overflow: hidden;
   border-radius: 15px;
   transition: width 0.2s ease-in-out;
+  
 
   /* Center folders */
   display: flex;
@@ -409,7 +416,7 @@ body {
 }
 
 .sidebar:hover {
-  width: 200px;
+  width: 180px;
 }
 
 .sidebar ul {
@@ -442,13 +449,28 @@ body {
   margin-top: 5px;
   border-left: 2px solid #666;
   text-decoration: none;
+  border-radius: 10px;
 }
 
 .folder-content li {
   padding: 5px;
   font-size: 18px;
+  border-radius: 10px;
+}
+
+.folder-content li a {
+color: white;
 }
 
 .folder-content li:hover {
-  background: #444;
+  background: #7f8c9e;
+}
+
+/*keycaps*/
+.keycaps {
+  margin: auto;
+  display: flex;
+  gap: 2rem;
+  width: 80%;
+  height: auto;
 }
