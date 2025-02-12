@@ -17,3 +17,13 @@ toggleSwitch.addEventListener('change', () => {
     localStorage.setItem('theme', 'light');
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  }
+
+  if (isMobileDevice()) {
+    document.querySelector(".sidebar").style.display = "none";
+  }
+});

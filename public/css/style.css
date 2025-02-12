@@ -263,14 +263,13 @@ p {
   display: block; /* Show sidebar by default */
 }
 
-/* Hide sidebar on screens smaller than 768px */
+
 @media screen and (max-width: 768px) {
-  .sidebar,
-  .folder,
-  .folder-content {
+  .sidebar {
     display: none;
   }
 }
+
 
 .bot-card {
   flex: 0 1 calc(33.333% - 2rem);
