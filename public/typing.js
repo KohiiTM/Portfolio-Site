@@ -6,7 +6,7 @@ const accuracyDisplay = document.getElementById("accuracy");
 const resetButton = document.getElementById("reset");
 
 const sampleTexts = [
-  "I am a front-end engineer who loves building user interfaces.",
+  "I am a software engineer who loves building various user interfaces and applications.",
   "With JavaScript, React, and CSS, I create smooth web experiences.",
   "I am earning my Software Engineering degree at WGU.",
   "Agile methods and debugging improve my development process.",
@@ -15,7 +15,7 @@ const sampleTexts = [
   "Git, Docker, and PostgreSQL help me build scalable apps.",
   "I focus on user-friendly design and web accessibility.",
   "My portfolio features projects using React and Flask.",
-  "I write clean, efficient code for great user experiences.",
+  "I aim to write clean, efficient code for great user experiences.",
 ];
 
 let chosenText = "";
