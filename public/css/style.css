@@ -39,7 +39,6 @@ body {
   border-radius: 20px;
 }
 
-
 a:link,
 a:visited {
   color: inherit; /* Inherits the text color from the parent */
@@ -264,20 +263,15 @@ p {
   display: block; /* Show sidebar by default */
 }
 
-
 @media screen and (max-width: 768px) {
   .sidebar {
     display: none;
   }
 }
 
-
 .bot-card {
   flex: 0 1 calc(33.333% - 2rem);
   min-width: 300px;
-}
-
-.bot-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
