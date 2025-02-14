@@ -15,10 +15,8 @@ const sampleTexts = [
   "Git, Docker, and PostgreSQL help me build scalable apps.",
   "I focus on user-friendly design and web accessibility.",
   "My portfolio features projects using React and Flask.",
-  "I write clean, efficient code for great user experiences."
+  "I write clean, efficient code for great user experiences.",
 ];
-
-
 
 let chosenText = "";
 let startTime = null;
@@ -27,7 +25,7 @@ let totalCorrectChars = 0;
 let totalTypedChars = 0;
 const totalTime = 60; // Total time for the test in seconds
 
-// Function to start the test
+// Start test
 function startTest() {
   chosenText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
   textDisplay.innerHTML = chosenText
@@ -36,7 +34,7 @@ function startTest() {
     .join("");
 
   textInput.value = "";
-  focusInput(); // Ensure input is focused
+  focusInput();
   clearInterval(timerInterval);
   timerDisplay.textContent = totalTime.toString();
   wpmDisplay.textContent = "0";
@@ -47,7 +45,7 @@ function startTest() {
   totalTypedChars = 0;
 }
 
-// Function to update WPM & accuracy
+// Update stats
 function updateStats() {
   if (!startTime) return;
 
@@ -84,14 +82,14 @@ function updateStats() {
   accuracyDisplay.textContent = accuracy;
 }
 
-// Function to ensure input is always focused
+// Focus input
 function focusInput() {
   textInput.focus();
 }
 
-// Function to start the timer and continuously update WPM
+// Start timer
 function startTimer() {
-  if (startTime) return; // Prevent multiple timers
+  if (startTime) return;
   startTime = Date.now();
 
   timerInterval = setInterval(() => {
@@ -99,25 +97,25 @@ function startTimer() {
     const remainingTime = totalTime - elapsedTime;
     timerDisplay.textContent = remainingTime.toString();
 
-    updateStats(); // Update WPM continuously
+    updateStats();
 
-    // Check if time is up
+    // Time up
     if (remainingTime <= 0) {
       clearInterval(timerInterval);
       textInput.disabled = true;
       timerDisplay.textContent = "0";
     }
-  }, 1000); // Update every second
+  }, 1000);
 }
 
-// Event Listener for typing
+// Typing event
 textInput.addEventListener("input", () => {
   startTimer();
   updateStats();
 
   // Check if completed
   if (textInput.value === chosenText) {
-    totalCorrectChars += textInput.value.length; // Add the length of the completed text to totalCorrectChars
+    totalCorrectChars += textInput.value.length;
     chosenText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
     textDisplay.innerHTML = chosenText
       .split("")
@@ -127,18 +125,18 @@ textInput.addEventListener("input", () => {
   }
 });
 
-// Ensure input is focused when clicking anywhere on the page
+// Focus input on click
 document.addEventListener("click", focusInput);
 
-// Ensure input is focused when any key is pressed
+// Focus input on keydown
 document.addEventListener("keydown", focusInput);
 
-// Reset Button
+// Reset button
 resetButton.addEventListener("click", () => {
   clearInterval(timerInterval);
   startTest();
   textInput.disabled = false;
 });
 
-// Initialize test
+// Initialize
 startTest();
