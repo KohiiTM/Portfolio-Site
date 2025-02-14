@@ -6,10 +6,19 @@ const accuracyDisplay = document.getElementById("accuracy");
 const resetButton = document.getElementById("reset");
 
 const sampleTexts = [
-  "The quick brown fox jumps over the lazy dog.",
-  "Typing tests improve both speed and accuracy.",
-  "JavaScript makes websites interactive and fun.",
+  "I am a front-end engineer who loves building user interfaces.",
+  "With JavaScript, React, and CSS, I create smooth web experiences.",
+  "I am earning my Software Engineering degree at WGU.",
+  "Agile methods and debugging improve my development process.",
+  "Based in Seattle, I seek front-end roles that push my skills.",
+  "I've built inventory tools, event apps, and more.",
+  "Git, Docker, and PostgreSQL help me build scalable apps.",
+  "I focus on user-friendly design and web accessibility.",
+  "My portfolio features projects using React and Flask.",
+  "I write clean, efficient code for great user experiences."
 ];
+
+
 
 let chosenText = "";
 let startTime = null;
