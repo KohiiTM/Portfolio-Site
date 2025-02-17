@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(response => response.json())
             .then(data => {
                 const timeString = new Date(data.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                timeDisplay.textContent = `| Time: ${timeString}`;
+                timeDisplay.textContent = `| ⏰ ${timeString}`;
             })
             .catch(error => console.error("Error fetching time:", error));
     }
