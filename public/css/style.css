@@ -130,9 +130,7 @@ body.dark-mode h1 span:last-child {
   color: #ccc;
 }
 
-a:visited {
-  color: #2b2822;
-}
+
 
 .home {
   font-size: 25px;
@@ -278,6 +276,8 @@ p {
   padding: 1.5rem;
   width: 300px;
   transition: transform 0.3s ease;
+  max-height: 680px;
+  gap: 0px;
 }
 
 .bot-card:hover {
@@ -402,7 +402,7 @@ body {
 .sidebar {
   position: fixed;
   left: 3px;
-  top: 30%;
+  top: 40%;
   width: 80px;
   height: 20vh;
   background-color: #414141;
@@ -532,4 +532,17 @@ body {
 
 .skills-list li:nth-child(even) {
   animation-delay: 1s;
+}
+
+
+.location-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.time-display {
+  font-size: 22px;
+  font-weight: 600;
 }

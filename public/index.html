@@ -46,7 +46,10 @@
         <section>
             <img class="keycaps" src="images/keycaps_.png"><br><br>
             <h1 class="title" id="about">Software Engineer</h1>
-            <p>Seattle, Washington</p>
+            <div class="location-time">
+                <p>Seattle, Washington</p>
+                <div id="seattle-time" class="time-display"></div>
+            </div
         <section><br><br>
 
             <div class="sidebar">
@@ -116,8 +119,8 @@
             <div class="bot-card">
                 <img src="images/kohii.png" alt="Bot Name Logo">
                 <h2>Kohii Discord Bot</h2>
-                <div class="bot-details">
-                    <p class="bot-description">Discord Bot which provides productivity enhancing <span class="green-text">features</span>:</p>
+                <div class="bot-details"><br><br><br>
+                    <p class="bot-description">Discord.py Bot which provides productivity enhancing <span class="green-text">features</span>:</p>
                     <ul class="bot-features">
                         <li>Provides customizable pomodoro sessions</li><br>
                         <li>Collectable digital cards</li><br>
@@ -139,9 +142,9 @@
                 <h2>About Me Typing Test</h2>
                 <div class="bot-details">
                     <p class="bot-description"><span class="green-text">Try it out</span>:</p>
-                    <embed src="typingtest.html" style="width:100%; height: 400px; border-radius: 10px;"
+                    <embed src="typingtest.html" style="width:100%; height: 350px; border-radius: 10px;"
                     <ul class="bot-features">
-                        <li></li><br>
+                        <br>
                     </ul>
                     
                     <div class="bot-stats">
@@ -149,15 +152,38 @@
                         <span></span>
                     </div>
                     <div class="bot-links">
-                        <a href="typingtest.html" class="bot-invite">Typing Test</a>
-                        <a href="https://github.com/KohiiTM/TypingTest" class="source-code">View Source</a>
+                        <a href="typingtest.html" class="bot-invite" target="blank_">Typing Test</a>
+                        <a href="https://github.com/KohiiTM/TypingTest" target="blank_" class="source-code">View Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bot-card">
+                <img src="https://cdn-icons-png.flaticon.com/128/18368/18368871.png" alt="Portfolio Logo">
+                <h2>Portfolio Website</h2>
+                <div class="bot-details">
+                    <p class="bot-description"><span class="green-text">Technologies Used</span>:</p>
+                    <ul class="bot-features">
+                        <li>HTML</li><br>
+                        <li>CSS</li><br>
+                        <li>JavaScript</li><br>
+                        <li>Font Awesome</li><br>
+                        <li>Google Fonts</li><br>
+                        <li>TimeAPI.io</li><br>
+                    </ul>
+                    <div class="bot-stats">
+                        <span>Responsive Design</span>
+                        <span>Interactive Elements</span>
+                    </div>
+                    <div class="bot-links">
+                        <a href="https://github.com/KohiiTM/portfolio" class="source-code" target="_blank">View Source</a>
                     </div>
                 </div>
             </div>
 
             <div class="bot-card">
                 <img src="" alt="Bot Name Logo">
-                <h2>Collaborative Event Planning Web App</h2>
+                <h2>Python - </h2>
                 <div class="bot-details">
                     <p class="bot-description"><span class="green-text">features</span>:</p>
                     <ul class="bot-features">
@@ -178,7 +204,7 @@
 
             <div class="bot-card">
                 <img src="" alt="Bot Name Logo">
-                <h2>Angular - Interactive SVG Map</h2>
+                <h2>Python </h2>
                 <div class="bot-details">
                     <p class="bot-description"><span class="green-text">features</span>:</p>
                     <ul class="bot-features">
@@ -213,5 +239,6 @@
                 <a href="mailto:jamesandallen.dev@gmail.com" class="contact">Contact </a> <a href="mailto:jamesandallen.dev@gmail.com" class="fa fa-envelope" aria-hidden="true"></a>
         </footer>    
         <script src="js\script.js"></script>
+        <script src="time.js"></script>
     </body>
 </html>
