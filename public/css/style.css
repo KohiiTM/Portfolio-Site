@@ -39,14 +39,14 @@ body {
 
 a:link,
 a:visited {
-  color: inherit; /* Inherits the text color from the parent */
+  color: none; /* Inherits the text color from the parent */
   text-decoration: none; /* Removes underlines if needed */
 }
 
 /* Optional Hover Effect */
 a:hover {
   text-decoration: underline; /* Add hover effect if desired */
-  color: inherit; /* Prevent color change on hover */
+  color: none; /* Prevent color change on hover */
 }
 
 a:active {
@@ -252,9 +252,33 @@ p {
   }
 }
 
+.sidebar-tab {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(65, 65, 65, 0.95);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  z-index: 101;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+}
+
+.sidebar-tab.clicked {
+  opacity: 0.5;
+}
+
+.sidebar-tab:hover {
+  background-color: rgba(22, 22, 22, 0.95);
+}
+
 .sidebar {
   position: fixed;
-  left: 20px;
+  left: -220px; /* Start hidden */
   top: 50%;
   transform: translateY(-50%);
   width: 200px;
@@ -262,25 +286,30 @@ p {
   backdrop-filter: blur(8px);
   color: white;
   padding: 15px 10px;
-  border-radius: 50px; /* Make more pill-shaped */
+  border-radius: 50px; /* More pill-shaped */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   z-index: 100;
 }
 
+.sidebar.active {
+  left: 20px; /* Show when active */
+}
+
+/* Remove the hover expansion */
 .sidebar:hover {
-  width: 200px;
   background-color: rgba(22, 22, 22, 0.95);
 }
 
 .folder {
   padding: 12px;
-  margin: 12px 0; /* Increased margin between sections */
+  margin: 10px 0;
   cursor: pointer;
-  border-radius: 25px; /* Rounder corners for items */
+  border-radius: 12px;
   transition: all 0.2s ease;
   list-style: none;
+  text-align: left;
 }
 
 .folder:hover {
@@ -290,23 +319,25 @@ p {
 .folder-name {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 16px;
+  gap: 18px; /* Increased gap between icon and text */
+  font-size: 20px;
   font-weight: 500;
   white-space: nowrap;
   opacity: 0.9;
-  font-size: 20px;
-  font-weight: 600;
+  padding: 8px 0; /* Added vertical padding */
 }
 
 .folder-content {
   display: none;
-  margin-top: 12px; /* Increased margin */
-  padding: 12px;
+  margin-top: 8px;
+  padding: 8px;
   background: rgba(51, 51, 51, 0.8);
-  border-radius: 15px;
+  border-radius: 8px;
   border-left: 2px solid rgba(255, 255, 255, 0.2);
-  list-style: none; /* Remove bullets */
+  list-style: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 /* Add this new style */
@@ -317,12 +348,13 @@ p {
 
 .folder:hover .folder-content {
   display: block;
-  animation: slideDown 0.2s ease;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .folder-content li {
-  padding: 10px 15px; /* Increased padding */
-  margin: 8px 0; /* Increased margin between items */
+  padding: 10px 15px;
+  margin: 8px 0;
   font-size: 20px;
   border-radius: 12px;
   transition: all 0.2s ease;
@@ -340,15 +372,10 @@ p {
   font-size: 20px;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.folder:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 /* Add a subtle separator between folders */
@@ -486,8 +513,9 @@ p {
 }
 
 /* Footer styles */
+
 .footer {
-  background: linear-gradient(to right, #83a1b9, #545897);
+  background: linear-gradient(to right, #252525, #474747);
   color: white;
   text-align: center;
   padding: 20px;
@@ -495,27 +523,29 @@ p {
   border-radius: 50px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 600px;
+  margin-top: 200px;
   transition: ease 0.2s;
+  height: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer i {
+  color: white;
 }
 
 .footer:hover {
   transform: translateY(-2px);
   transition: ease 0.2s;
 }
-.footer p {
-  margin: 0;
-  font-size: 16px;
-}
 
 .contact {
   font-size: 20px;
   font-weight: 600;
-  text-decoration: none;
-}
-
-.contact:hover {
-  text-decoration: underline;
 }
 
 [class="fa fa-envelope"] {
