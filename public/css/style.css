@@ -85,7 +85,7 @@ a:active {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  projecttom: 0;
   background-color: #333333;
   transition: 0.4s;
   border-radius: 30px;
@@ -97,7 +97,7 @@ a:active {
   height: 20px;
   width: 20px;
   left: 4px;
-  bottom: 3px;
+  projecttom: 3px;
   background-color: white;
   transition: 0.4s;
   border-radius: 50%;
@@ -130,11 +130,9 @@ body.dark-mode h1 span:last-child {
   color: #ccc;
 }
 
-
-
 .home {
   font-size: 25px;
-  padding-bottom: 20px;
+  padding-projecttom: 20px;
 }
 h1 {
   font-size: 30px;
@@ -219,7 +217,7 @@ p {
   top: 0px;
 }
 
-.bot-features li a {
+.project-features li a {
   position: relative;
   display: inline-block;
   padding: 5px;
@@ -227,19 +225,19 @@ p {
   transform-origin: center;
 }
 
-.bot-features li a:hover {
+.project-features li a:hover {
   transform: scale(1.1);
   font-weight: 600;
 }
 
-.bot-features ul li {
+.project-features ul li {
   margin-right: 12px;
 }
-.bot-features li {
+.project-features li {
   display: inline;
 }
 
-/*Discord Bots Display*/
+/*Discord projects Display*/
 
 .discord-projects {
   display: flex;
@@ -267,7 +265,7 @@ p {
   }
 }
 
-.bot-card {
+.project-card {
   flex: 0 1 calc(33.333% - 2rem);
   min-width: 300px;
   background: rgba(255, 255, 255, 0.1);
@@ -278,40 +276,74 @@ p {
   transition: transform 0.3s ease;
   max-height: 680px;
   gap: 0px;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.bot-card:hover {
+.project-card:hover {
   transform: translateY(-5px);
+  background-color: #000000;
+  opacity: 0.9;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #000000 20%,
+      #000000 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #000000 20%,
+        #000000 80%,
+        transparent 80%,
+        transparent
+      )
+      17.5px 17.5px,
+    linear-gradient(
+        #494949 1.4000000000000001px,
+        transparent 1.4000000000000001px
+      )
+      0 -0.7000000000000001px,
+    linear-gradient(
+        90deg,
+        #494949 1.4000000000000001px,
+        #000000 1.4000000000000001px
+      ) -0.7000000000000001px 0;
+  background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
 }
 
-.bot-card img {
+.project-card img {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
   margin: 0 auto;
   display: block;
 }
 
-.bot-details {
+.project-details {
   text-align: center;
   margin-top: 1rem;
 }
 
-.bot-stats {
+.project-stats {
   display: flex;
   justify-content: space-around;
   margin: 1rem 0;
 }
 
-.bot-links {
+.project-links {
   display: flex;
   gap: 1rem;
   justify-content: center;
   height: 40px; /* Fixed height for container */
   color: white;
+  position: relative;
+  z-index: 2;
 }
 
-.bot-invite,
+.project-invite,
 .source-code {
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -320,15 +352,17 @@ p {
   text-align: center;
   line-height: 1.5;
   transition: transform 0.2s ease, background-color 0.2s ease;
+  position: relative;
+  z-index: 2;
 }
 
-.bot-invite {
+.project-invite {
   background: #5865f2;
   color: white;
   white-space: nowrap;
 }
 
-.bot-invite:hover {
+.project-invite:hover {
   transform: translateY(-2px);
   background: #4752c4;
 }
@@ -347,12 +381,12 @@ p {
   color: rgb(57, 204, 135);
 }
 
-.bot-features li {
+.project-features li {
   font-size: 22px;
   font-weight: 400;
 }
 
-.bot-features span {
+.project-features span {
   font-weight: 600;
   font-size: 18px;
 }
@@ -438,7 +472,7 @@ body {
   padding: 10px;
   cursor: pointer;
   position: relative;
-  margin-bottom: 20px;
+  margin-projecttom: 20px;
 }
 
 .folder:hover .folder-content {
@@ -479,7 +513,7 @@ body {
   margin: auto;
   display: flex;
   gap: 2rem;
-  width: 80%;
+  width: 45%;
   height: auto;
 }
 
@@ -534,7 +568,6 @@ body {
   animation-delay: 1s;
 }
 
-
 .location-time {
   display: flex;
   align-items: center;
@@ -545,4 +578,23 @@ body {
 .time-display {
   font-size: 22px;
   font-weight: 600;
+}
+
+.technologies-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  padding-projecttom: 10px;
+}
+
+.technologies-list li {
+  display: inline-block;
+  font-size: 22px;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+.technologies-list li + li {
+  margin-left: 0;
 }

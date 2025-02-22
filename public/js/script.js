@@ -27,3 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".sidebar").style.display = "none";
   }
 });
+
+document.querySelectorAll('.project-card').forEach(card => {
+  const previewUrl = card.dataset.preview;
+  card.style.setProperty('--preview-image', `url('${previewUrl}')`);
+});
