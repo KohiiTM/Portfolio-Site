@@ -283,36 +283,10 @@ p {
 
 .project-card:hover {
   transform: translateY(-5px);
-  background-color: #000000;
-  opacity: 0.9;
-  background: radial-gradient(
-      circle,
-      transparent 20%,
-      #000000 20%,
-      #000000 80%,
-      transparent 80%,
-      transparent
-    ),
-    radial-gradient(
-        circle,
-        transparent 20%,
-        #000000 20%,
-        #000000 80%,
-        transparent 80%,
-        transparent
-      )
-      17.5px 17.5px,
-    linear-gradient(
-        #494949 1.4000000000000001px,
-        transparent 1.4000000000000001px
-      )
-      0 -0.7000000000000001px,
-    linear-gradient(
-        90deg,
-        #494949 1.4000000000000001px,
-        #000000 1.4000000000000001px
-      ) -0.7000000000000001px 0;
-  background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
+  background-color: #606060;
+opacity: 0.9;
+background: radial-gradient(circle, transparent 20%, #606060 20%, #606060 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #606060 20%, #606060 80%, transparent 80%, transparent) 17.5px 17.5px, linear-gradient(#494949 1.4000000000000001px, transparent 1.4000000000000001px) 0 -0.7000000000000001px, linear-gradient(90deg, #494949 1.4000000000000001px, #606060 1.4000000000000001px) -0.7000000000000001px 0;
+background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
 }
 
 .project-card img {
