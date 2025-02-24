@@ -37,20 +37,25 @@ body {
   border-radius: 20px;
 }
 
-a:link,
-a:visited {
-  color: none; /* Inherits the text color from the parent */
-  text-decoration: none; /* Removes underlines if needed */
+a {
+  color: inherit;
 }
 
-/* Optional Hover Effect */
+
+a:link,
+a:visited {
+  color: none; 
+  text-decoration: none; 
+}
+
+
 a:hover {
-  text-decoration: underline; /* Add hover effect if desired */
-  color: none; /* Prevent color change on hover */
+  text-decoration: underline; 
+  color: none; 
 }
 
 a:active {
-  color: inherit; /* Ensures no color change when clicking */
+  color: inherit; 
 }
 
 /* Container */
@@ -648,3 +653,5 @@ body {
 .technologies-list li + li {
   margin-left: 0;
 }
+
+
