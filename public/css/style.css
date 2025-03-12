@@ -19,6 +19,8 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scroll-padding-top: 25px;
+  overflow-x: hidden;
+  background-color: #2b2822;
 }
 
 body {
@@ -33,7 +35,7 @@ body {
   text-align: center;
   display: flexbox;
   transition: background 0.3s ease, color 0.3s ease;
-  border: 2px solid #f1f0e9;
+  border: 4px solid;
   border-radius: 20px;
 }
 
@@ -41,21 +43,19 @@ a {
   color: inherit;
 }
 
-
 a:link,
 a:visited {
-  color: none; 
-  text-decoration: none; 
+  color: none;
+  text-decoration: none;
 }
 
-
 a:hover {
-  text-decoration: underline; 
-  color: none; 
+  text-decoration: underline;
+  color: none;
 }
 
 a:active {
-  color: inherit; 
+  color: inherit;
 }
 
 /* Container */
@@ -135,7 +135,7 @@ body.dark-mode h1 span:last-child {
 
 .home {
   font-size: 25px;
-  padding-projecttom: 20px;
+  padding-bottom: 20px;
 }
 h1 {
   font-size: 30px;
@@ -562,13 +562,33 @@ body {
   margin: 0;
 }
 
-/*keycaps*/
 .keycaps {
   margin: auto;
   display: flex;
   gap: 2rem;
-  width: 45%;
+  width: min(100%, 800px);
   height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Add media queries for responsive sizing */
+@media screen and (max-width: 1200px) {
+  .keycaps {
+    width: min(60%, 600px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .keycaps {
+    width: min(75%, 400px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .keycaps {
+    width: 90%;
+  }
 }
 
 .skills-list {
@@ -653,5 +673,3 @@ body {
 .technologies-list li + li {
   margin-left: 0;
 }
-
-
