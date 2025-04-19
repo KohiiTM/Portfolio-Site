@@ -300,6 +300,7 @@ p {
 
 .sidebar.active {
   left: 20px; /* Show when active */
+  width: 400px;
 }
 
 /* Remove the hover expansion */
