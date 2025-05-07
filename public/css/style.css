@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&family=Raleway:wght@300;400;500;600;700;800&display=swap");
 
-
-
 * {
   font-family: "Poiret One", sans-serif;
   text-underline-offset: 0.3rem;
@@ -53,7 +51,6 @@ a:active {
   color: inherit;
 }
 
-/* Container */
 .mode-toggle-container {
   display: flex;
   align-items: right;
@@ -62,7 +59,7 @@ a:active {
   margin-top: 20px;
   margin-right: 10px;
 }
-/* Switch Styling */
+
 .switch {
   position: relative;
   display: inline-block;
@@ -76,7 +73,6 @@ a:active {
   height: 0;
 }
 
-/* Slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -101,7 +97,6 @@ a:active {
   border-radius: 50%;
 }
 
-/* When Checked - Move the Toggle */
 input:checked + .slider {
   background-color: #d1d1d1;
 }
@@ -110,7 +105,6 @@ input:checked + .slider:before {
   transform: translateX(30px);
 }
 
-/* Dark Mode Styles */
 body.dark-mode a {
   color: #f1f0e9;
 }
@@ -153,7 +147,6 @@ p {
   font-weight: bolder;
 }
 
-/* navbar */
 .navbar {
   margin: auto;
   font-size: 22px;
@@ -203,7 +196,6 @@ p {
   background-color: #f1f0e9;
 }
 
-/* About Page */
 .university-container {
   align-items: center;
   font-size: 22px;
@@ -237,8 +229,6 @@ p {
 .project-features li {
   display: inline;
 }
-
-/*Discord projects Display*/
 
 .discord-projects {
   display: flex;
@@ -282,7 +272,7 @@ p {
 
 .sidebar {
   position: fixed;
-  left: -220px; /* Start hidden */
+  left: -220px;
   top: 50%;
   transform: translateY(-50%);
   width: 200px;
@@ -290,7 +280,7 @@ p {
   backdrop-filter: blur(8px);
   color: white;
   padding: 15px 10px;
-  border-radius: 50px; /* More pill-shaped */
+  border-radius: 50px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -298,11 +288,10 @@ p {
 }
 
 .sidebar.active {
-  left: 20px; /* Show when active */
+  left: 20px;
   width: 400px;
 }
 
-/* Remove the hover expansion */
 .sidebar:hover {
   background-color: rgba(22, 22, 22, 0.95);
 }
@@ -328,12 +317,12 @@ p {
 .folder-name {
   display: flex;
   align-items: center;
-  gap: 18px; /* Increased gap between icon and text */
+  gap: 18px;
   font-size: 20px;
   font-weight: 500;
   white-space: nowrap;
   opacity: 0.9;
-  padding: 8px 0; /* Added vertical padding */
+  padding: 8px 0;
 }
 
 .folder-content {
@@ -349,7 +338,6 @@ p {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Add this new style */
 .folder ul {
   padding: 0;
   margin: 0;
@@ -387,7 +375,6 @@ p {
   padding-bottom: 25px;
 }
 
-/* Add a subtle separator between folders */
 .folder:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 15px;
@@ -468,7 +455,7 @@ p {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  height: 40px; /* Fixed height for container */
+  height: 40px;
   color: white;
   position: relative;
   z-index: 2;
@@ -522,8 +509,6 @@ p {
   font-size: 18px;
 }
 
-/* Footer styles */
-
 .footer {
   background: linear-gradient(to right, #252525, #474747);
   color: white;
@@ -562,7 +547,6 @@ footer i {
   text-decoration: none;
 }
 
-/* folders*/
 body {
   margin: 0;
 }
@@ -577,7 +561,6 @@ body {
   object-fit: contain;
 }
 
-/* Add media queries for responsive sizing */
 @media screen and (max-width: 1200px) {
   .keycaps {
     width: min(60%, 600px);
@@ -626,7 +609,6 @@ body {
   margin: 0.25rem;
 }
 
-/* Slight float animation */
 @keyframes floatEffect {
   0% {
     transform: translateY(0px);
@@ -639,7 +621,6 @@ body {
   }
 }
 
-/* Add slight delay for variety */
 .skills-list li:nth-child(odd) {
   animation-delay: 0.5s;
 }
@@ -652,7 +633,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Adjust the gap as needed */
+  gap: 10px;
 }
 
 .time-display {
@@ -680,7 +661,6 @@ body {
   margin-left: 0;
 }
 
-/* Mobile Navigation */
 @media screen and (max-width: 768px) {
   .nav-ul {
     flex-direction: column;
@@ -694,7 +674,6 @@ body {
     margin-right: 0;
   }
 
-  /* Adjust header spacing */
   header {
     padding: 0.5rem;
   }
@@ -704,7 +683,6 @@ body {
     margin-top: 10px;
   }
 
-  /* Project cards mobile layout */
   .discord-projects {
     padding: 0.5rem;
     gap: 1rem;
@@ -717,7 +695,6 @@ body {
     margin: 0.5rem 0;
   }
 
-  /* Skills list mobile optimization */
   .skills-list {
     padding: 0.5rem;
     gap: 0.5rem;
@@ -728,7 +705,6 @@ body {
     padding: 8px 12px;
   }
 
-  /* Sidebar mobile adjustments */
   .sidebar.active {
     width: 280px;
     left: 10px;
@@ -742,7 +718,6 @@ body {
     font-size: 16px;
   }
 
-  /* Typography adjustments */
   h1 {
     font-size: 24px;
   }
@@ -755,7 +730,6 @@ body {
     font-size: 18px;
   }
 
-  /* Footer mobile optimization */
   .footer {
     width: 80%;
     padding: 15px;
@@ -767,7 +741,6 @@ body {
   }
 }
 
-/* Small mobile devices */
 @media screen and (max-width: 480px) {
   .nav-ul li {
     width: 90%;
@@ -808,14 +781,10 @@ body {
   }
 }
 
-/* Add smooth transitions for mobile menu */
 .nav-ul {
   transition: all 0.3s ease;
 }
 
-/* Improve touch targets for mobile */
-
-/* Optimize project card hover for touch devices */
 @media (hover: none) {
   .project-card:hover {
     transform: none;
