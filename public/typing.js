@@ -33,6 +33,11 @@ function startTest() {
     .map((char) => `<span>${char}</span>`)
     .join("");
 
+  // Ensure scrollbars remain hidden
+  document.body.style.overflow = "hidden";
+  document.querySelector(".container").style.overflow = "hidden";
+  textDisplay.style.overflow = "hidden";
+
   textInput.value = "";
   focusInput();
   clearInterval(timerInterval);
