@@ -539,6 +539,13 @@ footer {
   height: 350px;
   border-radius: 0.5rem;
   margin: 1rem 0;
+  overflow: hidden;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.typing-test-embed::-webkit-scrollbar {
+  display: none; 
 }
 
 /* Time Display */
