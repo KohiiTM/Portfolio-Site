@@ -1,235 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.5, minimum-scale=1.5, maximum-scale=5, user-scalable=yes">
-        <link rel="stylesheet" href="css\style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/481f88c38c.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <header>
-            <div class="mode-toggle-container">
-                <span class="mode-toggle" style="font-weight: 800;">Mode Toggle</span>
-                <label class="switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div id="home" class="home">
-                <a href="index.html" style="text-decoration: none;" class="fa fa-home" aria-hidden="true"></a>
-            </div>
-            
-            <ul class="nav-ul" style="font-size: 25px;">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>    
-                <li><a href="#projects">Projects</a></li>
-                <li><a target="_blank" href="https://acrobat.adobe.com/id/urn:aaid:sc:US:b3bb2d3d-39f4-4630-a693-4b029d10493f">Resume</a></li>  
-            </ul>
-        </header>
-        <br>
-        <br>
-        <br>
-        <section>
-            <img class="keycaps" src="images/keycaps_.png">
-        <br>
-        <br>
-        <br>
-            <h1 class="title" id="about">Software Engineer</h1>
-            <div class="location-time">
-                <p>Seattle, Washington</p>
-                <div id="seattle-time" class="time-display"></div>
-            </div>
-        </section>
-
-        <div class="sidebar-tab">☰</div>
-        <div class="sidebar">
-            <ul>
-                <li class="home">
-                    <span class="home-button">
-                        <a href="#home" style="text-decoration: none;" class="fa fa-home" aria-hidden="true"></a>
-                    </span>
-                </li>
-                <li class="folder">
-                    <span class="folder-name">📁 Certs</span>
-                    <ul class="folder-content">
-                        <li><a href="https://www.credly.com/go/joo30aPv" target="_blank">Google IT Support</a></li>
-                        <li><a href="https://www.credly.com/badges/2f68973b-19d0-44a0-96a9-be666724c3c3/public_url" target="_blank">AWS Certified Cloud Practitioner</a></li>
-                        <li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:US:6eaa9a06-3ee6-4c30-928e-fb7ee84ad7ab" target="_blank">ITIL 4 Foundation</a></li>
-                    </ul>
-                </li>
-                <li class="folder">
-                    <span class="folder-name">📁 Info</span>
-                    <ul class="folder-content">
-                        <li><a href="mailto:jamesandallen.dev@gmail.com" target="_blank">Email</a></li>
-                        <li><a target="_blank" href="https://github.com/KohiiTM">GitHub</a></li>
-                        <li><a target="_blank" href="https://acrobat.adobe.com/id/urn:aaid:sc:US:b3bb2d3d-39f4-4630-a693-4b029d10493f">Resume</a></li>
-                    </ul>
-                </li>
-            </ul>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>James Allen - Software Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio website of James Allen, Software Engineer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css\style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/481f88c38c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="mode-toggle">
+          <label class="switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider"></span>
+          </label>
+          <span class="mode-text">Dark Mode</span>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li>
+            <a
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:US:b3bb2d3d-39f4-4630-a693-4b029d10493f"
+              target="_blank"
+              >Resume</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        <section>
-            <h2 class="skills" id="skills">Languages</h2>
-            <ul class="skills-list" id="skills-list">
-                <li>Java</li>
-                <li>Python</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>SQL</li>
-                <li>Rust</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="skills" id="skills">Tech & Frameworks</h2>
-            <ul class="skills-list" id="skills-list">
-                <li>Git</li>
-                <li>Bootstrap</li>
-                <li>React</li>
-                <li>Angular</li>
-                <li>Tailwind</li>
-                <li>Vue</li>
-                <li>Django</li>
-                <li>Flask</li>
-                <li>MongoDB</li>
-                <li>Spring Boot</li>
-            </ul>
-        </section>
-
-        <h2 class="title" id="projects">Projects</h2>
-        
-        <div class="discord-projects">
-            <div class="project-card" data-preview="/public/images/kohiiapp.png">
-                <img src="images/kohii.png" style="border-radius: 50%; "alt="project Name Logo">
-                <h2 id="discord-bot">Kohii - Discord Bot</h2>
-                <div class="project-details"><br>
-                    <p class="project-description">Discord.py project which provides productivity enhancing <span class="green-text">features</span>:</p>
-                    <ul class="project-features">
-                        <li>Provides customizable pomodoro sessions</li><br>
-                        <li>Collectable digital cards</li><br>
-                        <li>Open AI API interaction commands</li><br>
-                    </ul>
-                    <p class="project-description"><span class="green-text">Technologies</span>:</p>
-                    <ul class="project-features technologies-list">
-                        <li>Python</li>
-                        <li>Discord.py</li>
-                        <li>Flask</li>
-                        <li>MongoDB</li>
-                        <li>PyMongo</li>
-                    </ul>
-                    
-                    <div class="project-links">
-                        <a target="_blank" href="https://github.com/KohiiTM/KohiiDiscordBot" class="source-code">View Source</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card"data-preview="images/project2.png">
-                <img src="https://cdn-icons-png.flaticon.com/128/18368/18368871.png" alt="project Name Logo">
-                <h2>About Me - Typing Test</h2>
-                <div class="project-details">
-                    <p class="project-description"><span class="green-text">Try it out</span>:</p>
-                    <embed src="typingtest.html" style="width:100%; height: 350px; border-radius: 10px;"
-                    <ul class="project-features">
-                        <br>
-                    </ul>
-                    
-                    <div class="project-stats">
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="project-links">
-                        <a href="typingtest.html" class="project-invite" target="_blank">Typing Test</a>
-                        <a href="https://github.com/KohiiTM/TypingTest" target="_blank" class="source-code">View Source</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="images/doc.png" alt="Portfolio Logo">
-                <h2>Portfolio Website</h2>
-                <div class="project-details">
-                    <p class="project-description"><span class="green-text">Features</span>:</p>
-                    <ul class="project-features">
-                        <li>Dark/Light mode toggle</li><br>
-                        <li>Responsive design</li><br>
-                        <li>Interactive sidebar navigation</li><br>
-                        <li>Real-time local time display</li><br>
-                    </ul>
-                    <p class="project-description"><span class="green-text">Technologies</span>:</p>
-                    <ul class="technologies-list">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Font Awesome</li>
-                        <li>TimeAPI.io</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://github.com/KohiiTM/portfolio" class="source-code" target="_blank">View Source</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="images/chat.png" alt="project Name Logo"> <!--<a href="https://www.flaticon.com/free-icons/conversation" title="conversation icons">Conversation icons created by Pixel perfect - Flaticon</a>-->
-                <h2> Nook - Chat Application </h2>
-                <div class="project-details">
-                    <p class="project-description"><span class="green-text">Features</span>:</p>
-                    <ul class="project-features">
-                        <li>Real-time chat functionality</li><br>
-                        <li>User authentication</li><br>
-                        <li>Customizable chat themes</li><br>
-                    </ul>
-                    
-                        <p class="project-description"><span class="green-text">Technologies</span>:</p>
-                        <ul class="technologies-list">
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>Express</li>
-                            <li>MongoDB</li>
-                            <li>Socket.io</li>
-                            <li>JWT</li>
-                            <li>Bcrypt</li>
-                        </ul>
-                    
-                    <div class="project-links">
-                        <a href="https://nook-chat-app.onrender.com/signup" class="project-invite" target="_blank">Check It Out</a>
-                        <a href="https://github.com/KohiiTM/Nook-Chat-App" class="source-code" target="_blank">View Source</a>
-                    </div>
-                </div>
-            </div>
+    <main>
+      <section id="about" class="hero">
+        <div class="container">
+          <h1 class="name">James Anderson</h1>
+          <h2>Software Engineer</h2>
+          <div class="location-time">
+            <p>Seattle, Washington</p>
+            <div id="seattle-time" class="time-display"></div>
+          </div>
         </div>
+      </section>
 
-        <br><br><br><br>
-        <section class="education" id="education">
-            <h2>Education & Certifications</h2>
-            <div class="university-container">
-                <span class="university-name">Western Governors University • B.S. Software Engineering • Expected Graduation: May 2025</span>
-                <img src="https://www.svgrepo.com/show/481823/owl-3.svg" alt="University Logo" class="university-logo">
+      <section id="skills" class="skills">
+        <div class="container">
+          <h2>Languages</h2>
+          <ul class="skills-grid">
+            <li>Java</li>
+            <li>Python</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>SQL</li>
+            <li>Rust</li>
+          </ul>
+
+          <h2>Tech & Frameworks</h2>
+          <ul class="skills-grid">
+            <li>Git</li>
+            <li>Bootstrap</li>
+            <li>React</li>
+            <li>Angular</li>
+            <li>Tailwind</li>
+            <li>Vue</li>
+            <li>Django</li>
+            <li>Flask</li>
+            <li>MongoDB</li>
+            <li>Spring Boot</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="projects-grid">
+            <article class="project-card">
+              <img src="images/kohii.png" alt="Kohii Discord Bot" />
+              <h3>Kohii - Discord Bot</h3>
+              <div class="project-content">
+                <p class="project-description">
+                  Discord.py project which provides productivity enhancing
+                  <span class="highlight">features</span>:
+                </p>
+                <ul class="project-features">
+                  <li>Customizable pomodoro sessions</li>
+                  <li>Collectable digital cards</li>
+                  <li>Open AI API interaction commands</li>
+                </ul>
+                <div class="project-tech">
+                  <p class="highlight">Technologies:</p>
+                  <ul class="tech-list">
+                    <li>Python</li>
+                    <li>Discord.py</li>
+                    <li>Flask</li>
+                    <li>MongoDB</li>
+                    <li>PyMongo</li>
+                  </ul>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/KohiiTM/KohiiDiscordBot"
+                    target="_blank"
+                    class="btn"
+                    >View Source</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/18368/18368871.png"
+                alt="Typing Test"
+              />
+              <h3>Typing Test</h3>
+              <div class="project-content">
+                <p class="project-description">
+                  <span class="highlight">Try it out</span>:
+                </p>
+                <embed src="typingtest.html" class="typing-test-embed" />
+                <div class="project-links">
+                  <a href="typingtest.html" target="_blank" class="btn"
+                    >Try It</a
+                  >
+                  <a
+                    href="https://github.com/KohiiTM/TypingTest"
+                    target="_blank"
+                    class="btn"
+                    >View Source</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="images/doc.png" alt="Portfolio Website" />
+              <h3>Portfolio Website</h3>
+              <div class="project-content">
+                <p class="project-description">
+                  <span class="highlight">Features</span>:
+                </p>
+                <ul class="project-features">
+                  <li>Dark/Light mode toggle</li>
+                  <li>Responsive design</li>
+                  <li>Interactive navigation</li>
+                  <li>Real-time local time display</li>
+                </ul>
+                <div class="project-tech">
+                  <p class="highlight">Technologies:</p>
+                  <ul class="tech-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Font Awesome</li>
+                    <li>TimeAPI.io</li>
+                  </ul>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/KohiiTM/portfolio"
+                    target="_blank"
+                    class="btn"
+                    >View Source</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="images/chat.png" alt="Nook Chat Application" />
+              <h3>Nook - Chat Application</h3>
+              <div class="project-content">
+                <p class="project-description">
+                  <span class="highlight">Features</span>:
+                </p>
+                <ul class="project-features">
+                  <li>Real-time chat functionality</li>
+                  <li>User authentication</li>
+                  <li>Customizable chat themes</li>
+                </ul>
+                <div class="project-tech">
+                  <p class="highlight">Technologies:</p>
+                  <ul class="tech-list">
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>MongoDB</li>
+                    <li>Socket.io</li>
+                    <li>JWT</li>
+                    <li>Bcrypt</li>
+                  </ul>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="https://nook-chat-app.onrender.com/signup"
+                    target="_blank"
+                    class="btn"
+                    >Live Demo</a
+                  >
+                  <a
+                    href="https://github.com/KohiiTM/Nook-Chat-App"
+                    target="_blank"
+                    class="btn"
+                    >View Source</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="education">
+        <div class="container">
+          <h2>Education & Certifications</h2>
+          <div class="education-content">
+            <div class="university">
+              <img
+                src="https://www.svgrepo.com/show/481823/owl-3.svg"
+                alt="WGU Logo"
+                class="university-logo"
+              />
+              <p>
+                Western Governors University • B.S. Software Engineering •
+                Expected Graduation: May 2025
+              </p>
             </div>
-        </section>
-        <section>
-        <footer>
-            <footer>
-                <a href="mailto:jamesandallen.dev@gmail.com" class="footer">
-                    <span class="contact">Contact</span>
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                </a>
-            </footer>
-        <section>    
-        <script src="js\script.js"></script>
-        <script src="time.js"></script>
-    </body>
+            <div class="certifications">
+              <h3>Certifications</h3>
+              <ul>
+                <li>
+                  <a href="https://www.credly.com/go/joo30aPv" target="_blank"
+                    >Google IT Support</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.credly.com/badges/2f68973b-19d0-44a0-96a9-be666724c3c3/public_url"
+                    target="_blank"
+                    >AWS Certified Cloud Practitioner</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://acrobat.adobe.com/id/urn:aaid:sc:US:6eaa9a06-3ee6-4c30-928e-fb7ee84ad7ab"
+                    target="_blank"
+                    >ITIL 4 Foundation</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <a href="mailto:jamesandallen.dev@gmail.com" class="contact-btn">
+          <span>Contact</span>
+          <i class="fa fa-envelope"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="js\script.js"></script>
+    <script src="time.js"></script>
+  </body>
 </html>
