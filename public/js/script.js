@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenuBtn.classList.toggle("active");
   });
 
-  
   document.addEventListener("click", (e) => {
     if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
       navMenu.classList.remove("active");
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
   const modeText = document.querySelector(".mode-text");
 
-  
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -50,14 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
           behavior: "smooth",
           block: "start",
         });
-       
+
         navMenu.classList.remove("active");
         mobileMenuBtn.classList.remove("active");
       }
     });
   });
 
-  
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-menu a");
 
@@ -78,6 +74,32 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Sidebar toggle functionality
+  const sidebarTab = document.querySelector(".sidebar-tab");
+  const sidebar = document.querySelector(".sidebar");
+
+  sidebarTab.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+    sidebarTab.classList.toggle("active");
+  });
+
+  // Close sidebar when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target) && !sidebarTab.contains(e.target)) {
+      sidebar.classList.remove("active");
+      sidebarTab.classList.remove("active");
+    }
+  });
+
+  // Folder toggle functionality
+  document.querySelectorAll(".folder-name").forEach((folder) => {
+    folder.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent sidebar from closing when clicking folders
+      const parentFolder = folder.parentElement;
+      parentFolder.classList.toggle("active");
+    });
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -93,22 +115,4 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelectorAll(".project-card").forEach((card) => {
   const previewUrl = card.dataset.preview;
   card.style.setProperty("--preview-image", `url('${previewUrl}')`);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const sidebarTab = document.querySelector(".sidebar-tab");
-  const sidebar = document.querySelector(".sidebar");
-
-  sidebarTab.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
-    sidebarTab.classList.toggle("clicked");
-  });
-
- 
-  document.addEventListener("click", (e) => {
-    if (!sidebar.contains(e.target) && !sidebarTab.contains(e.target)) {
-      sidebar.classList.remove("active");
-      sidebarTab.classList.remove("clicked");
-    }
-  });
 });
