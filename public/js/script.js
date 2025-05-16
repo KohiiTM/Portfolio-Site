@@ -95,11 +95,16 @@ function updateActiveNavLink() {
 
   const isAtBottom = scrollPosition + viewportHeight >= documentHeight - 100;
 
+  const isAtTop = scrollPosition < 100;
+
   let currentSection = null;
   let minDistance = Infinity;
 
   if (isAtBottom) {
     currentSection = document.querySelector("#education");
+  }
+  else if (isAtTop) {
+    currentSection = document.querySelector("#about");
   } else {
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
@@ -121,12 +126,10 @@ function updateActiveNavLink() {
     });
   }
 
-  // If no section is found and we're not at the bottom, default to the first section
-  if (!currentSection && !isAtBottom) {
+  if (!currentSection) {
     currentSection = document.querySelector("#about");
   }
 
-  // Update active state for nav links
   if (currentSection) {
     const currentId = currentSection.getAttribute("id");
     navLinks.forEach((link) => {
@@ -138,7 +141,6 @@ function updateActiveNavLink() {
   }
 }
 
-// Add scroll event listener with improved throttling
 let scrollTimeout;
 window.addEventListener(
   "scroll",
