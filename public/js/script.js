@@ -90,26 +90,23 @@ function updateActiveNavLink() {
 
   const scrollPosition = window.scrollY;
   const viewportHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
   const offset = viewportHeight * 0.2;
+
+  const isAtBottom = scrollPosition + viewportHeight >= documentHeight - 100;
 
   let currentSection = null;
   let minDistance = Infinity;
 
-  const skillsSection = document.querySelector("#skills");
-  if (!skillsSection) return; // Guard against missing section
-
-  const skillsRect = skillsSection.getBoundingClientRect();
-  const skillsTop = skillsRect.top + scrollPosition;
-
-  if (scrollPosition < skillsTop - viewportHeight * 0.3) {
-    currentSection = document.querySelector("#about");
+  if (isAtBottom) {
+    currentSection = document.querySelector("#education");
   } else {
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
       const sectionTop = rect.top + scrollPosition;
       const sectionBottom = sectionTop + rect.height;
 
-      const threshold = Math.min(viewportHeight * 0.15, 150);
+      const threshold = Math.min(viewportHeight * 0.2, 200);
 
       if (
         scrollPosition + offset >= sectionTop - threshold &&
@@ -124,6 +121,12 @@ function updateActiveNavLink() {
     });
   }
 
+  // If no section is found and we're not at the bottom, default to the first section
+  if (!currentSection && !isAtBottom) {
+    currentSection = document.querySelector("#about");
+  }
+
+  // Update active state for nav links
   if (currentSection) {
     const currentId = currentSection.getAttribute("id");
     navLinks.forEach((link) => {
@@ -137,19 +140,36 @@ function updateActiveNavLink() {
 
 // Add scroll event listener with improved throttling
 let scrollTimeout;
-window.addEventListener("scroll", () => {
-  if (!scrollTimeout) {
-    scrollTimeout = requestAnimationFrame(() => {
-      updateActiveNavLink();
-      scrollTimeout = null;
-    });
-  }
-});
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!scrollTimeout) {
+      scrollTimeout = requestAnimationFrame(() => {
+        updateActiveNavLink();
+        scrollTimeout = null;
+      });
+    }
+  },
+  { passive: true }
+);
 
-// Update active state on resize
-window.addEventListener("resize", () => {
-  updateActiveNavLink();
-});
+// Update active state on resize with debounce
+let resizeTimeout;
+window.addEventListener(
+  "resize",
+  () => {
+    if (resizeTimeout) {
+      clearTimeout(resizeTimeout);
+    }
+    resizeTimeout = setTimeout(() => {
+      updateActiveNavLink();
+    }, 100);
+  },
+  { passive: true }
+);
+
+// Initial call after a short delay to ensure proper calculation
+setTimeout(updateActiveNavLink, 100);
 
 document.addEventListener("DOMContentLoaded", function () {
   function isMobileDevice() {
