@@ -150,13 +150,30 @@ input:checked + .slider:before {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
-  transition: var(--transition);
+  transition: all 0.1s ease;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-menu a::before {
+  content: ">";
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transition: all 0.1s ease;
 }
 
 .nav-menu a:hover {
-  color: var(--accent-color);
+  color: var(--accent-color-2);
+  padding-left: 20px;
+}
+
+.nav-menu a:hover::before {
+  opacity: 1;
+  left: 0;
 }
 
 /* Hero Section */
@@ -427,17 +444,68 @@ input:checked + .slider:before {
   background: var(--primary-color);
   color: var(--bg-color);
   text-decoration: none;
-  border-radius: 4px;
-  transition: var(--transition);
+  border-radius: 0;
+  transition: all 0.1s ease;
   min-width: 120px;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
+  border: 2px solid var(--bg-color);
+  box-shadow: 4px 4px 0 var(--bg-color);
+  position: relative;
+  text-transform: uppercase;
 }
 
 .btn:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
-  box-shadow: var(--hover-shadow);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--bg-color);
+  background: var(--accent-color-2);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+/* Project Links Button */
+.project-links .btn {
+  background: var(--primary-color);
+  border: 2px solid var(--bg-color);
+  box-shadow: 4px 4px 0 var(--bg-color);
+}
+
+.project-links .btn:hover {
+  background: var(--accent-color-2);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--bg-color);
+}
+
+/* Contact Button */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.1s ease;
+  border: 2px solid var(--bg-color);
+  box-shadow: 4px 4px 0 var(--bg-color);
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 1px;
+}
+
+.contact-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--bg-color);
+  background: var(--accent-color-2);
+}
+
+.contact-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
 }
 
 /* Education Section */
@@ -511,23 +579,6 @@ footer {
   padding: 2rem 0;
   text-align: center;
   background-color: var(--card-bg);
-}
-
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  transition: var(--transition);
-}
-
-.contact-btn:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
 }
 
 /* Responsive Design */
@@ -769,13 +820,18 @@ footer {
   font-size: 0.85rem;
   display: block;
   padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: var(--transition);
+  border-radius: 0;
+  transition: all 0.1s ease;
+  border-left: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .sidebar .folder-content a:hover {
+  color: var(--accent-color-2);
+  border-left: 2px solid var(--accent-color-2);
   background: var(--bg-color);
-  color: var(--accent-color);
+  padding-left: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -906,5 +962,38 @@ footer {
 @media (max-width: 480px) {
   .skill-group .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Add scanline effect to buttons */
+.btn::after,
+.contact-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.05) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn:hover::after,
+.contact-btn:hover::after {
+  animation: scanline 0.5s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 4px;
   }
 }
