@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Wait for both DOM and resources to be fully loaded
+window.addEventListener("load", () => {
   // Mobile menu toggle
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navMenu = document.querySelector(".nav-menu");
@@ -69,32 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Folder toggle
   document.querySelectorAll(".folder-name").forEach((folder) => {
     folder.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent sidebar from closing when clicking folders
+      e.stopPropagation();
       const parentFolder = folder.parentElement;
       parentFolder.classList.toggle("active");
     });
   });
+
+  // Initialize active nav link
+  updateActiveNavLink();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  function isMobileDevice() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-  }
-
-  if (isMobileDevice()) {
-    document.querySelector(".sidebar").style.display = "none";
-  }
-});
-
-document.querySelectorAll(".project-card").forEach((card) => {
-  const previewUrl = card.dataset.preview;
-  card.style.setProperty("--preview-image", `url('${previewUrl}')`);
-});
-
-// Function to handle navbar active states
 function updateActiveNavLink() {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(
@@ -109,6 +96,8 @@ function updateActiveNavLink() {
   let minDistance = Infinity;
 
   const skillsSection = document.querySelector("#skills");
+  if (!skillsSection) return; // Guard against missing section
+
   const skillsRect = skillsSection.getBoundingClientRect();
   const skillsTop = skillsRect.top + scrollPosition;
 
@@ -146,6 +135,7 @@ function updateActiveNavLink() {
   }
 }
 
+// Add scroll event listener with improved throttling
 let scrollTimeout;
 window.addEventListener("scroll", () => {
   if (!scrollTimeout) {
@@ -156,8 +146,22 @@ window.addEventListener("scroll", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", updateActiveNavLink);
-
+// Update active state on resize
 window.addEventListener("resize", () => {
   updateActiveNavLink();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  }
+
+  if (isMobileDevice()) {
+    document.querySelector(".sidebar").style.display = "none";
+  }
+});
+
+document.querySelectorAll(".project-card").forEach((card) => {
+  const previewUrl = card.dataset.preview;
+  card.style.setProperty("--preview-image", `url('${previewUrl}')`);
 });
