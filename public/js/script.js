@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Sidebar toggle functionality
   const sidebarTab = document.querySelector(".sidebar-tab");
   const sidebar = document.querySelector(".sidebar");
 
@@ -63,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarTab.classList.toggle("active");
   });
 
-  // Close sidebar when clicking outside
   document.addEventListener("click", (e) => {
     if (!sidebar.contains(e.target) && !sidebarTab.contains(e.target)) {
       sidebar.classList.remove("active");
@@ -71,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Folder toggle functionality
+  // Folder toggle
   document.querySelectorAll(".folder-name").forEach((folder) => {
     folder.addEventListener("click", (e) => {
       e.stopPropagation(); // Prevent sidebar from closing when clicking folders
@@ -103,31 +101,40 @@ function updateActiveNavLink() {
     ".nav-menu a:not([href*='resume'])"
   );
 
-  // Get current scroll position with offset
-  const scrollPosition = window.scrollY + window.innerHeight * 0.2;
+  const scrollPosition = window.scrollY;
+  const viewportHeight = window.innerHeight;
+  const offset = viewportHeight * 0.2;
 
   let currentSection = null;
   let minDistance = Infinity;
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionBottom = sectionTop + sectionHeight;
+  const skillsSection = document.querySelector("#skills");
+  const skillsRect = skillsSection.getBoundingClientRect();
+  const skillsTop = skillsRect.top + scrollPosition;
 
-    // Check if we're within this section's boundaries
-    if (
-      scrollPosition >= sectionTop - 150 &&
-      scrollPosition <= sectionBottom + 150
-    ) {
-      const distance = Math.abs(sectionTop - scrollPosition);
-      if (distance < minDistance) {
-        minDistance = distance;
-        currentSection = section;
+  if (scrollPosition < skillsTop - viewportHeight * 0.3) {
+    currentSection = document.querySelector("#about");
+  } else {
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top + scrollPosition;
+      const sectionBottom = sectionTop + rect.height;
+
+      const threshold = Math.min(viewportHeight * 0.15, 150);
+
+      if (
+        scrollPosition + offset >= sectionTop - threshold &&
+        scrollPosition + offset <= sectionBottom + threshold
+      ) {
+        const distance = Math.abs(sectionTop - (scrollPosition + offset));
+        if (distance < minDistance) {
+          minDistance = distance;
+          currentSection = section;
+        }
       }
-    }
-  });
+    });
+  }
 
-  // Update active states
   if (currentSection) {
     const currentId = currentSection.getAttribute("id");
     navLinks.forEach((link) => {
@@ -139,16 +146,18 @@ function updateActiveNavLink() {
   }
 }
 
-// Add scroll event listener with throttling
 let scrollTimeout;
 window.addEventListener("scroll", () => {
   if (!scrollTimeout) {
-    scrollTimeout = setTimeout(() => {
+    scrollTimeout = requestAnimationFrame(() => {
       updateActiveNavLink();
       scrollTimeout = null;
-    }, 50); // Reduced throttle time for more responsive updates
+    });
   }
 });
 
-// Call once on page load to set initial state
 document.addEventListener("DOMContentLoaded", updateActiveNavLink);
+
+window.addEventListener("resize", () => {
+  updateActiveNavLink();
+});
