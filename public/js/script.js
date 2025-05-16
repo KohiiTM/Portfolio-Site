@@ -54,27 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-menu a");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (pageYOffset >= sectionTop - 200) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href").slice(1) === current) {
-        link.classList.add("active");
-      }
-    });
-  });
-
   // Sidebar toggle functionality
   const sidebarTab = document.querySelector(".sidebar-tab");
   const sidebar = document.querySelector(".sidebar");
@@ -116,3 +95,60 @@ document.querySelectorAll(".project-card").forEach((card) => {
   const previewUrl = card.dataset.preview;
   card.style.setProperty("--preview-image", `url('${previewUrl}')`);
 });
+
+// Function to handle navbar active states
+function updateActiveNavLink() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(
+    ".nav-menu a:not([href*='resume'])"
+  );
+
+  // Get current scroll position with offset
+  const scrollPosition = window.scrollY + window.innerHeight * 0.2;
+
+  let currentSection = null;
+  let minDistance = Infinity;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionBottom = sectionTop + sectionHeight;
+
+    // Check if we're within this section's boundaries
+    if (
+      scrollPosition >= sectionTop - 150 &&
+      scrollPosition <= sectionBottom + 150
+    ) {
+      const distance = Math.abs(sectionTop - scrollPosition);
+      if (distance < minDistance) {
+        minDistance = distance;
+        currentSection = section;
+      }
+    }
+  });
+
+  // Update active states
+  if (currentSection) {
+    const currentId = currentSection.getAttribute("id");
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").slice(1) === currentId) {
+        link.classList.add("active");
+      }
+    });
+  }
+}
+
+// Add scroll event listener with throttling
+let scrollTimeout;
+window.addEventListener("scroll", () => {
+  if (!scrollTimeout) {
+    scrollTimeout = setTimeout(() => {
+      updateActiveNavLink();
+      scrollTimeout = null;
+    }, 50); // Reduced throttle time for more responsive updates
+  }
+});
+
+// Call once on page load to set initial state
+document.addEventListener("DOMContentLoaded", updateActiveNavLink);
