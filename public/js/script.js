@@ -1,5 +1,10 @@
-// Wait for both DOM and resources to be fully loaded
 window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
   // Mobile menu toggle
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navMenu = document.querySelector(".nav-menu");
@@ -102,8 +107,7 @@ function updateActiveNavLink() {
 
   if (isAtBottom) {
     currentSection = document.querySelector("#education");
-  }
-  else if (isAtTop) {
+  } else if (isAtTop) {
     currentSection = document.querySelector("#about");
   } else {
     sections.forEach((section) => {
