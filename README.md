@@ -62,3 +62,6 @@ portfolio/
 ## License
 
 This project is open source and available under the MIT License.
+
+<img width="2428" height="4401" alt="image" src="https://github.com/user-attachments/assets/2c14b1fd-ad7e-4ace-8e55-b040c4610449" />
+
