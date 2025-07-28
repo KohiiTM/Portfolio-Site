@@ -19,7 +19,7 @@ A professional portfolio website showcasing my skills, projects, and experience 
 - **Icons**: Font Awesome
 - **Fonts**: Google Fonts (Inter)
 - **APIs**: TimeAPI.io for real-time clock functionality
-- **Deployment**: GitHub Pages
+- **Deployment**: Cloudflare Pages
 
 ## Project Structure
 
